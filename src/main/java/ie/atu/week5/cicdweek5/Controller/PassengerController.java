@@ -49,4 +49,12 @@ public class PassengerController
                 .created(URI.create("/api/passengers" + created.getPassengerId()))
                 .body(created);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Passenger> update(@PathVariable String id, @Valid @RequestBody Passenger updated)
+    {
+        Optional<Passenger> maybe = service.update(id, updated);
+        return maybe.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
