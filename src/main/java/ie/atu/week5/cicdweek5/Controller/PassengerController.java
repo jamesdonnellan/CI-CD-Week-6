@@ -57,4 +57,11 @@ public class PassengerController
         return maybe.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id)
+    {
+        boolean removed = service.deleteById(id);
+        return removed ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
+    }
 }
