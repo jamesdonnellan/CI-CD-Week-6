@@ -50,6 +50,22 @@ public class PassengerController
                 .body(created);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @PutMapping("/{id}")
     public ResponseEntity<Passenger> update(@PathVariable String id, @Valid @RequestBody Passenger updated)
     {
