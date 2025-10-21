@@ -50,22 +50,6 @@ public class PassengerController
                 .body(created);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @PutMapping("/{id}")
     public ResponseEntity<Passenger> update(@PathVariable String id, @Valid @RequestBody Passenger updated)
     {
@@ -75,9 +59,9 @@ public class PassengerController
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable String id) {
+    public ResponseEntity<Void> delete(@PathVariable String id)
+    {
         boolean removed = service.deleteById(id);
         return removed ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
-
 }
