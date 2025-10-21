@@ -38,4 +38,9 @@ public class PassengerService
         store.add(p);
         return p;
     }
+
+    public boolean deleteById(String id)
+    {
+        return store.removeIf(p -> p.getPassengerId().equals(id));
+    }
 }
