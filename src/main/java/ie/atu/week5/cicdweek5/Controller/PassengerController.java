@@ -46,7 +46,7 @@ public class PassengerController
     {
         Passenger created = service.create(p);
         return ResponseEntity
-                .created(URI.create("/api/passengers" + created.getPassengerId()))
+                .created(URI.create("/api/passengers/" + created.getPassengerId()))
                 .body(created);
     }
 
