@@ -11,12 +11,15 @@ import lombok.*;
 @NoArgsConstructor @AllArgsConstructor @Builder
 public class Passenger
 {
-    @NotBlank @Size (max = 40)
+    @NotBlank(message = "ID is required")
+    @Size (message = "ID cannot exceed 40 characters" ,max = 40)
     private String passengerId;
 
-    @NotBlank @Size(max = 60)
+    @NotBlank(message = "Name is required")
+    @Size(message = "Name cannot exceed 60 characters", max = 60)
     private String name;
 
-    @NotBlank @Email
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email must be a valid address")
     private String email;
 }
