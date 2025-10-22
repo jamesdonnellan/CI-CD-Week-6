@@ -10,9 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ExceptionDetails
 {
-
-
-
     private String fieldName;
     private String fieldValue;
 }
