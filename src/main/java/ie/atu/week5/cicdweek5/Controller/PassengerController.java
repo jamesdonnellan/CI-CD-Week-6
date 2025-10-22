@@ -44,7 +44,7 @@ public class PassengerController
     }
 
     @PostMapping
-    public ResponseEntity<Passenger> create(@Valid @RequestBody Passenger p)
+    public ResponseEntity<Passenger> create(@Valid @RequestBody Passenger p) // Valid tags trigger validation and keep controller methods thin
     {
         Passenger created = service.create(p);
         return ResponseEntity
